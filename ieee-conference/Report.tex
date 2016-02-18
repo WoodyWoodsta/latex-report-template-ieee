@@ -1,0 +1,36 @@
+\input{Preamble/Preamble}
+
+\newcommand{\mainauthor}{Sean Wood}
+\newcommand{\mainauthoradditional}{WDXSEA003}
+\newcommand{\reporttitle}{Report Title}
+
+\title{%
+  \reporttitle
+}
+
+\author{%
+  \setcounter{author}{1}
+  \IEEEauthorblockN{\mainauthor\theauthor}
+  \setcounter{author}{1}
+  \IEEEauthorblockA{%
+  EEE4084F Class of 2016\\
+  University of Cape Town\\
+  South Africa\\
+  \theauthor{}\mainauthoradditional\\
+  }
+}
+
+\begin{document}
+\begin{sloppypar}
+
+\maketitle
+
+\input{FrontMatter/Abstract}
+
+% === Section Imports ===
+\input{Body/Introduction}
+
+\bibliography{Bibliography}
+
+\end{sloppypar}
+\end{document}

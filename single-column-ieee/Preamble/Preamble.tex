@@ -1,0 +1,84 @@
+\documentclass[conference, onecolumn]{IEEEtran}
+\bibliographystyle{IEEEtran}
+
+\usepackage[none]{hyphenat}
+
+\usepackage{fancyhdr}                              % Required for custom headers
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{float}                                     % Images and other floats
+\usepackage{flafter}
+\usepackage{placeins}
+\usepackage{cite}
+\usepackage{epstopdf}                                      % EPS graphic support
+
+%-------------------------------------------------------------------------------
+
+\newcommand{\micro}{\textmu}
+\newcommand{\Ohm}{$\Omega$}
+
+\newcommand{\etal}       {\emph{et~al.}}
+\newcommand{\ie}         {i.e.}
+\newcommand{\bookcite}[2]{\cite{#1}~pg.~#2}
+%-------------------------------------------------------------------------------
+
+\newcounter{author}
+\renewcommand{\theauthor}{\stepcounter{author}\raisebox{1ex}{\small\fnsymbol{author}}}
+%-------------------------------------------------------------------------------
+
+\renewcommand{\today}{%
+ \number\day\space%
+ \ifcase\month%
+  \or January%
+  \or February%
+  \or March%
+  \or April%
+  \or May%
+  \or June%
+  \or July%
+  \or August%
+  \or September%
+  \or October%
+  \or November%
+  \or December%
+ \fi%
+ \space\number\year%
+}
+%-------------------------------------------------------------------------------
+
+\makeatletter
+
+\newcommand\frontmatter{%
+    \cleardoublepage
+  %\@mainmatterfalse
+  \pagenumbering{roman}}
+
+\newcommand\mainmatter{%
+    \cleardoublepage
+ % \@mainmattertrue
+  \pagenumbering{arabic}}
+
+\newcommand\backmatter{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+ % \@mainmatterfalse
+   }
+
+\makeatother
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\mainauthor\ | \mainauthoradditional}            %% C or L or R.
+  \fancyhead[R]{\reporttitle}                            				 %% C or L or R.
+  \fancyfoot[L]{Page\ \thepage}%                                 %% C or L or R.
+  \renewcommand{\footrulewidth}{0.3pt}
+  \renewcommand{\headrulewidth}{0.5pt}
+}
+
+\input{Preamble/TablesAndFigures}
+\input{Preamble/Listings}
+\input{Preamble/HyperRef}
+%-------------------------------------------------------------------------------
