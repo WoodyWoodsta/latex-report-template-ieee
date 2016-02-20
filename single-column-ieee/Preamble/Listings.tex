@@ -1,14 +1,25 @@
 \usepackage{textcomp} %Used in listings for printing upright quotes
-\usepackage{listings} %For typesetting source code
-\lstloadlanguages{C++, Matlab, Verilog}
-%-------------------------------------------------------------------------------
+% == Colour Definitions
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.93,0.93,0.93}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
 
-\lstset{%
- frame      = single,%
- basicstyle = \tiny\ttfamily,%
- basewidth  = 1.3ex%
-% basicstyle = \scriptsize\ttfamily,%
-% basewidth  = 1.2ex%
+% == Code Snippet Config
+\DeclareBoolOption[true]{cache}
+\setmonofont{UbuntuMono-Regular}
+\usemintedstyle{friendly}
+\setminted{ bgcolor=gray,
+            fontsize=\small}
+\lstset{frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
 }
 %-------------------------------------------------------------------------------
 
