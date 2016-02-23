@@ -2,7 +2,8 @@
 
 \newcommand{\mainauthor}{Sean Wood}
 \newcommand{\mainauthoradditional}{WDXSEA003}
-\newcommand{\reporttitle}{Report Title}
+\newcommand{\reporttitle}{Worksheet 1 Report}
+\newcommand{\coursecode}{EEE4096F}
 
 \title{%
   \begin{figure}[H]
@@ -17,15 +18,9 @@
 }
 
 \author{%
-  \setcounter{author}{1}
-  \IEEEauthorblockN{\mainauthor\theauthor}
-  \setcounter{author}{1}
-  \IEEEauthorblockA{%
-  EEE4084F Class of 2016\\
+  \mainauthor\ | \mainauthoradditional\\
   University of Cape Town\\
   South Africa\\
-  \theauthor{}\mainauthoradditional\\
-  }
 }
 
 \begin{document}
@@ -34,9 +29,8 @@
 \maketitle
 \newpage
 
-
-\thispagestyle{plain}
-\pagestyle{plain}
+\thispagestyle{fancy}
+\pagestyle{fancy}
 
 \frontmatter
 \addcontentsline{toc}{section}{Abstract}
@@ -46,6 +40,7 @@
 \tableofcontents
 
 \mainmatter
+
 % === Section Imports ===
 \input{Body/Introduction}
 

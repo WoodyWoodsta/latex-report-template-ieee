@@ -1,4 +1,4 @@
-\documentclass[conference, onecolumn]{IEEEtran}
+\documentclass[a4paper]{article}
 \bibliographystyle{IEEEtran}
 
 \usepackage{fontspec}
@@ -6,7 +6,6 @@
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{float}                                     % Images and other floats
-\usepackage{fancyhdr}                              % Required for custom headers
 \usepackage{flafter}
 \usepackage{placeins}
 \usepackage{cite}
@@ -15,11 +14,12 @@
 \usepackage{amsmath}
 \usepackage{mathtools}                                           % Math packages
 \usepackage{mathabx}
-\usepackage{pygmentex}                              % Code snippet color support
+% \usepackage{pygmentex}                              % Code snippet color support
 \usepackage{listings}                                     % Code snippet support
 \usepackage{minted}                                              % Code snippets
 \usepackage{bm}                                             % Bold maths symbols
-
+\usepackage{enumerate}
+\usepackage{fancyhdr}                              % Required for custom headers
 %-------------------------------------------------------------------------------
 
 \newcommand{\micro}{\textmu}
@@ -28,10 +28,6 @@
 \newcommand{\etal}       {\emph{et~al.}}
 \newcommand{\ie}         {i.e.}
 \newcommand{\bookcite}[2]{\cite{#1}~pg.~#2}
-%-------------------------------------------------------------------------------
-
-\newcounter{author}
-\renewcommand{\theauthor}{\stepcounter{author}\raisebox{1ex}{\small\fnsymbol{author}}}
 %-------------------------------------------------------------------------------
 
 \renewcommand{\today}{%
@@ -77,14 +73,25 @@
 
 \makeatother
 
-\fancypagestyle{plain}{
-  \fancyhf{}
-  \fancyhead[L]{\mainauthor\ | \mainauthoradditional}            %% C or L or R.
-  \fancyhead[R]{\reporttitle}                            				 %% C or L or R.
-  \fancyfoot[L]{Page\ \thepage}%                                 %% C or L or R.
-  \renewcommand{\footrulewidth}{0.3pt}
-  \renewcommand{\headrulewidth}{0.5pt}
-}
+\lhead{\mainauthor\ | \mainauthoradditional}                    % Top left header
+\chead{}                                                      % Top center header
+\rhead{\coursecode\ | \reporttitle}                      % Top right header\first
+\lfoot{}                                                     % Bottom left footer
+\cfoot{Page\ \thepage}                                     % Bottom center footer
+\rfoot{}                                                    % Bottom right footer
+%\renewcommand{\footrulewidth}{0.3pt}
+\renewcommand{\headrulewidth}{0.5pt}
+
+
+\topmargin=-0.45in
+\evensidemargin=-0.1in
+\oddsidemargin=-0.1in
+\textwidth=6.5in
+\textheight=10in
+\headsep=0.25in
+
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}       % Scientific Notation!
+\providecommand{\eoc}{\ensuremath{_{\slash \slash \slash}}} % End of Calculation Symbol!
 
 \input{Preamble/TablesAndFigures}
 \input{Preamble/Listings}
